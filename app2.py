@@ -5,26 +5,25 @@ import numpy as np
 # 隨機生成與 5 部 IMDB 真實電影相關的樣本數據集
 np.random.seed(42)
 data = {
-    'Movie': ['Movie A', 'Movie B', 'Movie C', 'Movie D', 'Movie E'],
+    'Movie': ['Captain America: Brave New World', 'The Gorge', 'Companion', 'Den of Thieves 2: Pantera', 'Back in Action'],
     'Duration': np.random.randint(80, 180, 5),
-    'IMDb Rating': np.random.uniform(5.0, 9.0, 5),
-    'Genre': ['Action', 'Comedy', 'Drama', 'Thriller', 'Sci-Fi'],
-    'Director': ['Director A', 'Director B', 'Director C', 'Director D', 'Director E'],
+    'IMDb Rating':['6.1', '6.8', '7.2','6.3','5.9'], #np.random.uniform(5.0, 9.0, 5),
+    'Genre': ['Action', 'Dark Romance', 'Artifical Intellgence', 'Drama', 'Spy'],
+    'Director': ['Julius Onah', 'Scott Derrickson', 'Drew Hancock', 'Christian Gudegast ', 'Seth Gordon'],
     'Box Office Gross': np.random.randint(1000000, 100000000, 5),
     'Number of Votes': np.random.randint(1000, 100000, 5),
-    'Release Year': np.random.randint(2000, 2025, 5)
+    'Release Year': ['2025','2025','2025','2025','2025']#np.random.randint(2000, 2025, 5)
 }
 df = pd.DataFrame(data)
 
 # 設定 Streamlit 應用程式標題
 st.title('IMDB Movie Data Visualization')
-
+ 
 # 在側邊欄中讓用戶選擇圖表類型
 chart_type = st.sidebar.selectbox(
     'Select Chart Type',
     ('Scatter Chart', 'Bar Chart', 'Line Chart', 'Area Chart')
 )
-
 # 顯示數據表格
 st.write('### Movie Dataset')
 st.dataframe(df)
