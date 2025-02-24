@@ -19,7 +19,7 @@ location = st.sidebar.selectbox("Select a location", df["place"])
 # Display bar chart of all locations
 st.title("Temperature of All Locations")
 chart = alt.Chart(df).mark_bar().encode(
-    x='place',
+    x='place',s
     y='value',
     tooltip=['place', 'value']
 ).properties(
